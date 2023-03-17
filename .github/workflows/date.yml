@@ -5,30 +5,39 @@ on: [push]
 jobs:
   job1:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
+
       - name: run job1
-      - run: echo $(date)
+        run: echo $(date)
 
   job2:
     runs-on: windows-latest
+
     steps:
       - uses: actions/checkout@v3
+
       - name: run job2
-      - run: echo $(date)
+        run: echo $(date)
 
   job3:
     runs-on: macos-latest
+
     steps:
       - uses: actions/checkout@v3
+
       - name: run job3
-      - run: echo $(date)
+        run: echo $(date)
 
   job4:
     runs-on: ubuntu-latest
-    depends-on: [job1, job2, job3]
+
     steps:
       - uses: actions/checkout@v3
+
       - name: run job4
-      - run: echo $(date)
+        run: echo $(date)
+
+    needs: [job1, job2, job3]
 
