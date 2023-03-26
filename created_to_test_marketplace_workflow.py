@@ -1,2 +1,2 @@
-for i in rangess(5):
+for i in range(5):
   print(i)
